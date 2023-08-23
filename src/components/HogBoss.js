@@ -13,6 +13,7 @@ function HogBoss() {
         name={pig.name}
         hobby={pig.hobby}
         eyeColor={eyeColor}
+        weight={pig.weight}
       />
     );
   });
