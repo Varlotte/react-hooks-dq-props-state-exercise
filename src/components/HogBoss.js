@@ -6,6 +6,17 @@ import offspring from "../data";
 function HogBoss() {
   const [eyeColor, setEyeColor] = useState("blue");
 
+  const offspringArray = offspring.map((pig) => {
+    return (
+      <BabyHog
+        key={pig.id}
+        name={pig.name}
+        hobby={pig.hobby}
+        eyeColor={eyeColor}
+      />
+    );
+  });
+
   function handleChangeEyeColor(e) {
     setEyeColor(e.target.value);
   }
@@ -39,23 +50,7 @@ function HogBoss() {
       <div id="boss-domicile">
         <img id="boss-blaster" src={Boss} alt="" />
       </div>
-      <ul className="hoglist">
-        <BabyHog
-          eyeColor={eyeColor}
-          name={offspring[0].name}
-          hobby={offspring[0].hobby}
-        />
-        <BabyHog
-          eyeColor={eyeColor}
-          name={offspring[1].name}
-          hobby={offspring[1].hobby}
-        />
-        <BabyHog
-          eyeColor={eyeColor}
-          name={offspring[2].name}
-          hobby={offspring[2].hobby}
-        />
-      </ul>
+      <ul className="hoglist">{offspringArray}</ul>
     </div>
   );
 }
