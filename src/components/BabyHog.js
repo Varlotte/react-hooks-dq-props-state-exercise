@@ -12,13 +12,13 @@ function BabyHog(props) {
     // how can we reuse this for both buttons?
     // perhaps something with e.target.name === "+"
   }
-
+  console.log(props);
   return (
     <li className="hogbabies">
       <h1>Name</h1>
       <h3>Weight:</h3>
       <h3>Hobby:</h3>
-      <h4>Eye Color:</h4>
+      <h4>Eye Color: {props.eyeColor}</h4>
 
       <button name="+">Increase Weight</button>
       <button name="-">Decrease Weight</button>
