@@ -12,6 +12,23 @@ function BabyHog(props) {
     // how can we reuse this for both buttons?
     // perhaps something with e.target.name === "+"
   }
+  let img;
+
+  switch (props.eyeColor) {
+    case "blue":
+      img = BlueBaby;
+      break;
+    case "sun":
+      img = SunBaby;
+      break;
+    case "glowing":
+      img = GlowingBaby;
+      break;
+    default:
+      img = normalBaby;
+      break;
+  }
+
   console.log(props);
   return (
     <li className="hogbabies">
@@ -24,11 +41,7 @@ function BabyHog(props) {
       <button name="-">Decrease Weight</button>
 
       <div className="hb-wrap">
-        <img
-          src={normalBaby}
-          style={{ height: "200px" }}
-          alt="MasterBlasterJrJr"
-        />
+        <img src={img} style={{ height: "200px" }} alt="MasterBlasterJrJr" />
       </div>
     </li>
   );

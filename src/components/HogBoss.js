@@ -4,7 +4,7 @@ import BabyHog from "./BabyHog";
 import offspring from "../data";
 
 function HogBoss() {
-  const [eyeColor, setEyeColor] = useState("blue");
+  const [eyeColor, setEyeColor] = useState("");
 
   const offspringArray = offspring.map((pig) => {
     return (
